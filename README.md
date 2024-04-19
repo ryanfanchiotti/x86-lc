@@ -1,2 +1,2 @@
 # x86-leetcode
-x86-64 leetcode solutions
+passing all tests on leetcode.com
