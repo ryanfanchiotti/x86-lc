@@ -9,7 +9,7 @@ int canJump(int* nums, int numsSize) {
     return 1;
 } */
 
-// at&t x86_64 solution using 32 bit registers as variables instead of stack frame
+// at&t x86_64 solution using registers as variables instead of stack frame
 __attribute__((naked))
 int canJump(int* nums, int numsSize){
     __asm__(
