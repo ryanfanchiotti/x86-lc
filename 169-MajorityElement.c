@@ -1,4 +1,4 @@
-/* C solution using Boyer-Moore majority vote algorithm:
+/* C solution using Boyer-Moore majority vote algorithm
 int majorityElement(int* nums, int numsSize) {
     int votes = 1, cur = *nums;
     for (int i = 1; i < numsSize; i++){
@@ -11,7 +11,7 @@ int majorityElement(int* nums, int numsSize) {
     return cur;
 } */
 
-// at&t x86_64 solution using stack frame:
+// at&t x86_64 solution using stack frame
 __attribute__((naked)) 
 int majorityElement(int* nums, int numsSize) {
     __asm__(
