@@ -30,7 +30,7 @@ void deleteNode(struct ListNode* node){
         "xor %r9, %r9;" // storing prev node in r9
 
         "loop:;" // while next node isn't null
-        "cmpq $0, %r8;"
+        "test %r8, %r8;"
         "je end;"
 
         "mov (%rdi), %eax;" // moving current node contents to eax
