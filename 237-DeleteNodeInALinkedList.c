@@ -21,6 +21,7 @@ void deleteNode(struct ListNode* node) {
 } */
 
 // at&t x86_64 solution
+// this can be done only swapping two nodes, i wanted practice swapping through the entire list
 __attribute__((naked))
 void deleteNode(struct ListNode* node){
     __asm__(
