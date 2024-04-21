@@ -21,7 +21,8 @@ void deleteNode(struct ListNode* node) {
 } */
 
 // at&t x86_64 solution
-// this can be done only swapping two nodes, i wanted practice swapping through the entire list
+// this can be done only swapping two nodes, wanted practice swapping through the entire list
+// nodes don't seem to be malloced so no need to free node that's being removed
 __attribute__((naked))
 void deleteNode(struct ListNode* node){
     __asm__(
