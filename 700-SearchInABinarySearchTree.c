@@ -29,18 +29,15 @@ struct TreeNode* searchBST(struct TreeNode* root, int val) {
         "ret;"
         
         "after2:"
-        "movq $1, %r8;" // r8 always 1 for indexing purposes
-        "movq $2, %r9;" // r9 always 2 for indexing purposes
-        "movq (%rdi, %r8, 8), %r10;" // store left node in r10
-        "movq (%rdi, %r9, 8), %r11;" // store right node in r11
-
         "cmpl (%rdi), %eax;" // check if val is less than root val
         "jge right;"
-        "movq %r10, %rdi;" // move left node to root for func call
+        "add $8, %rdi;" // move left node to root for func call
+        "mov (%rdi), %rdi;"
         "jmp end;"
 
         "right:;"
-        "movq %r11, %rdi;" // move right node to root for func call
+        "add $16, %rdi;" // move right node to root for func call
+        "mov (%rdi), %rdi;"
 
         "end:;"
         "call searchBST;" // call self
