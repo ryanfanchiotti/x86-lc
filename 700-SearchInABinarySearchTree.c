@@ -1,4 +1,4 @@
-/**
+/**/**
  * Definition for a binary tree node.
  * struct TreeNode {
  *     int val;
@@ -31,13 +31,11 @@ struct TreeNode* searchBST(struct TreeNode* root, int val) {
         "after2:"
         "cmpl (%rdi), %eax;" // check if val is less than root val
         "jge right;"
-        "add $8, %rdi;" // move left node to root for func call
-        "mov (%rdi), %rdi;"
+        "mov 8(%rdi), %rdi;" // move left node to root for func call
         "jmp end;"
 
         "right:;"
-        "add $16, %rdi;" // move right node to root for func call
-        "mov (%rdi), %rdi;"
+        "mov 16(%rdi), %rdi;"  // move right node to root for func call
 
         "end:;"
         "call searchBST;" // call self
